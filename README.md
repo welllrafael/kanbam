@@ -4,7 +4,7 @@ simple kanbam board
 #instructions for use
 run npm i
 
-#Sometimes needs to execute, it depend NODE Version
+#Sometimes needs to execute, it depend NODE Version:
 set NODE_OPTIONS=--openssl-legacy-provider
 
 #There is a API to create a new user:
@@ -21,9 +21,9 @@ Frontend=kanbam\Hack\kanbam
 Backend=\kanbam\nestjs-monorepo-docker\apps\kanbam
 
 Stacks: 
-Angular, Bootstrap, Jasmine
-NodeJS, Nest, Jest
-mongo, Realm
+Angular, Bootstrap, Jasmine.
+NodeJS, Nest, Jest.
+mongo, Realm, Docker.
 
 
 ![image](https://user-images.githubusercontent.com/18073338/208189618-178f87e4-2995-4652-9e68-a395c4250de4.png)
