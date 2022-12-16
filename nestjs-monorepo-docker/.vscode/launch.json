@@ -1,0 +1,51 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+	  {
+		"type": "node",
+		"request": "attach",
+		"name": "Debug MAIN-RECEIVER",
+		"remoteRoot": "/usr/src/app/",
+		"localRoot": "${workspaceFolder}/apps/kanbam/",
+		"protocol": "inspector",
+		"port": 9230,
+		"restart": true,
+		"address": "localhost",
+		"sourceMaps": true,
+		"runtimeArgs": ["--nolazy", "-r", "ts-node/register"],
+		"skipFiles": ["<node_internals>/**"]
+	  },
+	  {
+		"type": "node",
+		"request": "launch",
+		"name": "Debug kanban",
+		"args": [
+			"${workspaceFolder}/apps/kanbam/src/main.ts"
+		],            
+		"runtimeArgs": [
+			"--nolazy",
+			"-r",
+			"ts-node/register",
+			"-r",
+			"tsconfig-paths/register",
+		],
+		"sourceMaps": true,
+		"cwd": "${workspaceRoot}/apps/kanbam",
+		"console": "integratedTerminal"
+
+		// "type": "node",
+		// "request": "attach",
+		// "name": "Debug FIRST-CONSUMER",
+		// "remoteRoot": "/usr/src/app/",
+		// "localRoot": "${workspaceFolder}/apps/first-consumer/",
+		// "protocol": "inspector",
+		// "port": 9231,
+		// "restart": true,
+		// "address": "localhost",
+		// "sourceMaps": true,
+		// "runtimeArgs": ["--nolazy", "-r", "ts-node/register"],
+		// "skipFiles": ["<node_internals>/**"]
+	  }
+	]
+  }
+  

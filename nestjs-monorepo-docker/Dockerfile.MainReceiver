@@ -1,0 +1,13 @@
+FROM node:14-alpine
+
+USER root
+
+RUN npm install -g @nestjs/cli@8.0.0
+
+COPY /apps/main-receiver/package*.json ./
+COPY /apps/main-receiver/tsconfig.build.json ./
+COPY /apps/main-receiver/tsconfig.json ./
+
+COPY . .
+
+WORKDIR /usr/src/app
