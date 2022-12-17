@@ -1,0 +1,31 @@
+version: "3"
+
+services:
+  nest_kanban:
+    container_name: nest_kanban
+    build:
+      context: ./nestjs-monorepo-docker/
+      dockerfile: ./Dockerfile.MainReceiver
+    volumes:
+      - ./nestjs-monorepo-docker/apps/kanbam/:/usr/src/app/
+    networks:
+      - monorepo_network
+    ports:
+      - 3002:3002
+      - 9230:9229
+    command: "sh -c 'npm install --force && nest start'"
+  angular_kanban:
+    container_name: angular_kanban
+    build:
+      context: ./Hack/kanbam/
+      dockerfile: ./Dockerfile.Kanban
+    volumes:
+      - ./hack/kanbam/:/usr/src/app/
+    networks:
+      - monorepo_network
+    ports:
+      - 4200:4200
+    command: "sh -c 'npm install --force && ng serve --host 0.0.0.0'"
+networks:
+  monorepo_network:
+    driver: bridge
