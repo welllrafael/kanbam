@@ -1,12 +1,12 @@
-FROM node:14-alpine
+FROM node:18-slim
 
 USER root
 
 RUN npm install -g @nestjs/cli@8.0.0
 
-COPY /apps/main-receiver/package*.json ./
-COPY /apps/main-receiver/tsconfig.build.json ./
-COPY /apps/main-receiver/tsconfig.json ./
+COPY /apps/kanbam/package*.json ./
+COPY /apps/kanbam/tsconfig.build.json ./
+COPY /apps/kanbam/tsconfig.json ./
 
 COPY . .
 

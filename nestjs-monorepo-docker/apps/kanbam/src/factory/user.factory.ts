@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { IRepository } from '../interface/IRepository.interface';
-import { UserRepository } from '../repositories/User.repository';
+import { UserRepository } from '../repositories/user.repository';
 import { GenericFactory } from './generic.factory';
 
 @Injectable()

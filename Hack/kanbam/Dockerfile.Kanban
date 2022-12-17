@@ -1,0 +1,15 @@
+FROM node:16.19-bullseye-slim
+
+USER root
+
+RUN npm install -g @angular/cli@latest
+
+COPY ./package*.json ./
+COPY ./tsconfig.app.json ./
+COPY ./tsconfig.json ./
+
+COPY . .
+
+WORKDIR /usr/src/app
+
+EXPOSE 4200
